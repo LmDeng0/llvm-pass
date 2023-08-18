@@ -1,6 +1,6 @@
-add_library(Passname MODULE
+add_library(DFGGenpass MODULE
     # List your source files here.
-    Pass.cpp
+    DFGGenpass.cpp
 )
 
 # Use C++11 to compile our pass (i.e., supply -std=c++11).
