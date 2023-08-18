@@ -10,6 +10,6 @@ cd the build folder and build it: cd build && cmake ../
 make the project: make
 
 execute by the Pass
-opt -load /the/path/of/libxxx.so -xxxPass /the/path/of/llvm/IR/file
+opt -load /the/path/of/libxxx.so -xxxPass -enable-new-pm=0 /the/path/of/llvm/IR/file
 
 then there are the outputs.
