@@ -234,13 +234,13 @@ namespace
     }
 
     // Hello - The first implementation, without getAnalysisUsage.
-    struct DFGOut : public LoopPass
+    struct DFGGenpass : public LoopPass
     {
         std::vector<OpGraph*> graphs;
         std::map<unsigned int, std::string> tag_pairs;
         std::vector<std::string> loop_tags;
         static char ID; // Pass identification, replacement for typeid
-        DFGOut() : LoopPass(ID)
+        DFGGenpass() : LoopPass(ID)
         {
             if(!inputTagPairs.empty())
             {
@@ -638,7 +638,7 @@ namespace
     };
 }
 
-char DFGOut::ID = 0;
-static RegisterPass<DFGOut> X("dfg-out", "DFG(Data Flow Graph) Output Pass",
+char DFGGenpass::ID = 0;
+static RegisterPass<DFGGenpass> X("DFGGenpass", "DFG(Data Flow Graph) Output Pass",
         false /* Only looks at CFG */,
         false /* Analysis Pass */);
